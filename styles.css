@@ -54,11 +54,11 @@
   }
 
   body {
-    font-family: 'Sentinel Book', serif; /* Example of using Sentinel Book font */
+    font-family: 'Sentinel Book', serif; 
   }
   
   header, button, .button-container {
-    font-family: 'Brandon Bold', sans-serif; /* Example of using Brandon Bold font */
+    font-family: 'Brandon Bold', sans-serif; 
   }
 
 
@@ -67,11 +67,11 @@
   }
   
   p {
-    font-family: 'Cervo Medium Neue', sans-serif; /* Example of using Cervo Medium Neue font */
+    font-family: 'Cervo Medium Neue', sans-serif;
   }
   
   .nav-menu {
-    font-family: 'Poynter Semibold', serif; /* Example of using Poynter Semibold font */
+    font-family: 'Poynter Semibold', serif; 
   }
   
   .contact-form-container, .form-group{
@@ -310,6 +310,86 @@ button[type="submit"]:hover {
 
 
 
+/* General Styles for Mobile Devices */
+@media (max-width: 768px) {
+  #about {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 20px 10px; /* Adjust padding */
+  }
+
+  #about img {
+    width: 150px; /* Adjust image size */
+    height: 150px;
+  }
+
+  #about h1 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+
+  #about h2 {
+    font-size: 1.5rem; /* Adjust subheading size */
+  }
+
+  #about ul {
+    font-size: 1rem; /* Adjust list font size */
+    padding-left: 20px; /* Adjust padding */
+  }
+
+  #about .button {
+    width: 100%; /* Make buttons full width */
+    margin: 10px 0; /* Add margin between buttons */
+  }
+}
+
+#about {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+#about div {
+  text-align: left;
+}
+
+#about img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+#about .button {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #6B9ABE;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-family: Brandon Bold;
+}
+
+#about h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+#about h2 {
+  color: #6B9ABE;
+}
+
+#about ul {
+  font-family: Sentinel Book;
+  font-style: normal;
+  font-size: 1.5rem;
+  padding-left: 20px; /* Add some padding to the left for the list */
+}
+
+
+
+
 /* Skills Page  */
 .skill-bubble {
     padding: 10px 20px;
@@ -341,144 +421,208 @@ button[type="submit"]:hover {
 
 
 
-
-
-/* Timeline Page  */
+/* Timeline Page */
 
 .timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
-  
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #ccc;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-item {
+  padding: 20px 30px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.timeline-item::after {
+  content: ' ';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #ccc;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;  /* Adjusted to align properly */
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;  /* Adjusted to align properly */
+}
+
+.timeline-item:nth-child(even)::after {
+  left: -17px; /* Ensuring the circle stays aligned properly on the right-side cards */
+}
+
+.timeline-content {
+  padding: 20px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3, .timeline-content h4 {
+  margin-top: 0;
+  font-family: Sentinel Book;
+}
+
+.timeline-content ul {
+  padding-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #ccc;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
+      left: 0%;  /* Adjust the vertical line to the left */
   }
-  
+
   .timeline-item {
-    padding: 20px 30px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;  /* Center align text for readability */
+      padding-left: 20px;  /* Add left padding to avoid overlap */
   }
-  
-  .timeline-item::after {
-    content: ' ';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #ccc;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  
-  .timeline-item:nth-child(odd) {
-    left: -10%;  /* Adjusted to move left-side cards further left */
-  }
-  
+
+  .timeline-item:nth-child(odd), 
   .timeline-item:nth-child(even) {
-    left: 55%;  /* Adjusted to move right-side cards further right */
+      left: 0;
   }
-  
-  .timeline-item:nth-child(even)::after {
-    left: -17px; /* Ensuring the circle stays aligned properly on the right-side cards */
+
+  .timeline-item::after {
+      top: -15px;  /* Position the circle above the card */
+      left: 25px;  /* Position the circle near the left edge */
+      margin-left: 0;  /* Remove margin adjustment */
   }
-  
-  .timeline-content {
-    padding: 20px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #ccc;
+      top: 25px;
+      bottom: 0;
+      left: 18px;  /* Position the line near the left edge */
+      z-index: -1;
   }
-  
-  .timeline-content h3, .timeline-content h4 {
-    margin-top: 0;
-    font-family: Sentinel Book;
-  }
-  
-  .timeline-content ul {
-    padding-left: 20px;
-  }
+}
+
+
   
 
 
 /* Contact Section Styles */
 #contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 .contact-container {
-    display: flex;
-    align-items: flex-start;
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between; /* Ensure left and right sides are spaced apart */
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px;
 }
 
 .left-side {
-    flex: 1;
-    text-align: left;
-    padding: 20px;
+  flex: 1;
+  text-align: left;
+  padding: 20px;
 }
 
 .left-side h2 {
-    font-family: 'Poynter Bold', serif;
-    font-size: 5rem;
-    margin: 0;
+  font-family: 'Poynter Bold', serif;
+  font-size: 5rem;
+  margin: 0;
 }
 
 .right-side {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  padding: 20px;
 }
 
 .contact-info {
-    text-align: left;
+  text-align: left; /* Align text to the left */
 }
 
 .contact-item {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
 .circular-photo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .email {
-    font-family: 'Sentinel Medium', serif;
-    font-size: 1.2rem;
-    margin: 0;
-    color: black;
+  font-family: 'Sentinel Medium', serif;
+  font-size: 1.2rem;
+  margin: 0;
+  color: black;
 }
 
 .email a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .email a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: center; /* Center items horizontally */
+  }
+
+  .left-side, .right-side {
+      flex: auto; /* Take full width on smaller screens */
+      text-align: center; /* Center align text */
+      justify-content: center;
+  }
+
+  .left-side h2 {
+      font-size: 3rem; /* Adjust heading size */
+  }
+
+  .circular-photo {
+      width: 40px; /* Adjust image size */
+      height: 40px;
+  }
+
+  .email {
+      font-size: 1rem; /* Adjust font size */
+  }
 }
