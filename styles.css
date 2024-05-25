@@ -327,17 +327,17 @@ button[type="submit"]:hover {
   }
 
   #about h2 {
-    font-size: 1.5rem; /* Adjust subheading size */
+    font-size: 1.5rem; 
   }
 
   #about ul {
-    font-size: 1rem; /* Adjust list font size */
+    font-size: 1rem; 
     padding-left: 20px; /* Adjust padding */
   }
 
   #about .button {
-    width: 100%; /* Make buttons full width */
-    margin: 10px 0; /* Add margin between buttons */
+    width: 100%; 
+    margin: 10px 0; 
   }
 }
 
@@ -603,26 +603,26 @@ button[type="submit"]:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-container {
-      flex-direction: column; /* Stack items vertically on smaller screens */
-      align-items: center; /* Center items horizontally */
+      flex-direction: column; 
+      align-items: center; 
   }
 
   .left-side, .right-side {
-      flex: auto; /* Take full width on smaller screens */
-      text-align: center; /* Center align text */
+      flex: auto;
+      text-align: center; 
       justify-content: center;
   }
 
   .left-side h2 {
-      font-size: 3rem; /* Adjust heading size */
+      font-size: 3rem; 
   }
 
   .circular-photo {
-      width: 40px; /* Adjust image size */
+      width: 40px;
       height: 40px;
   }
 
   .email {
-      font-size: 1rem; /* Adjust font size */
+      font-size: 1rem; 
   }
 }
